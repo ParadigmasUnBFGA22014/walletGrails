@@ -89,3 +89,18 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.wallet.authentication.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.wallet.authentication.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.wallet.authentication.Role'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                              ['isAuthenticated()'],
+	'/index':                         ['isAuthenticated()'],
+	'/index.gsp':                     ['isAuthenticated()'],
+	'/**/js/**':                      ['permitAll'],
+	'/**/css/**':                     ['permitAll'],
+	'/**/images/**':                  ['permitAll'],
+	'/**/favicon.ico':                ['permitAll']
+]
