@@ -1,7 +1,9 @@
 package com.wallet
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured(['ROLE_ADMIN'])
 class PriceController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
