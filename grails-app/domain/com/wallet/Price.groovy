@@ -1,13 +1,13 @@
 package com.wallet
 
 class Price {
+	List<Date> date = new ArrayList<>()
+	List<Double> open = new ArrayList<>()
+	List<Double> high = new ArrayList<>()
+	List<Double> low = new ArrayList<>()
+	List<Double> close = new ArrayList<>()
+	List<Integer> volume = new ArrayList<>()
 
-	List<Date> date = new Arraylist<Date>
-	List<double> open = new Arraylist<double>
-	List<double> high = new Arraylist<double>
-	List<double> low = new Arraylist<double>
-	List<double> close = new Arraylist<double>
-	List<int> volume = new Arraylist<int>
     static constraints = {
     }
 }
