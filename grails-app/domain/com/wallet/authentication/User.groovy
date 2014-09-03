@@ -16,6 +16,10 @@ class User {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
+		accountExpired display: false
+		accountLocked display: false
+		passwordExpired display: false
+		enabled display: false
 	}
 
 	static mapping = {
