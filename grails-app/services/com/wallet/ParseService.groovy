@@ -5,6 +5,8 @@ class ParseService {
     def populatePrice() {
     	boolean first = true
 
+    	Price.getAll()*.delete()
+
     	new File("table.csv").eachCsvLine { tokens ->
     		if(!first){
 	    		Price price = new Price()
@@ -20,5 +22,17 @@ class ParseService {
 			}
 			first = false
     	}
+    }
+
+    def getCloses(){
+    	def prices = Price.getAll()
+
+    	List<Double> closes = new ArrayList<>()
+
+    	prices.each{ price ->
+    		closes.add(price.close)
+    	}
+
+    	return closes
     }
 }
