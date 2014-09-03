@@ -96,12 +96,11 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.wallet.authen
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.wallet.authentication.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.wallet.authentication.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                              ['permitAll'],
-	'/index':                         ['permitAll'],
-	'/index.gsp':                     ['permitAll'],
+	'/':                              ['isAuthenticated()'],
+	'/index':                         ['isAuthenticated()'],
+	'/index.gsp':                     ['isAuthenticated()'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']
 ]
-
