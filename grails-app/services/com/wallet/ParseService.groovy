@@ -25,14 +25,18 @@ class ParseService {
     }
 
     def getCloses(){
-    	def prices = Price.getAll()
+        def prices = Price.getAll()
 
-    	List<Double> closes = new ArrayList<>()
+        Double[] closes = new double[prices.size()]
 
-    	prices.each{ price ->
-    		closes.add(price.close)
-    	}
+        for(int i = 0; i < prices.size(); i++){
+            closes[i] = prices.get(i).close;
+        }
 
-    	return closes
+        for(int i = 0; i < closes.length; i++){
+            print closes[i] +"\n"
+        }
+
+        return closes
     }
 }
