@@ -148,6 +148,7 @@
 										<div class="col-md-12">
 											<div class="col-md-offset-3 col-md-9">
 												<g:hiddenField name="id" value="${walletInstance?.id}" />
+												<g:link class="btn green" action="calculate" id="${walletInstance?.id}"><g:message code="default.button.calculate.label" default="Calcular" /></g:link>
 												<g:link class="btn green" action="edit" id="${walletInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 												<g:actionSubmit class="btn red" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Você tem certeza?')}');" />
 											</div>

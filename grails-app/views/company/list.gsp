@@ -53,7 +53,8 @@
 						<table class="table table-striped table-bordered table-hover" id="sample_2">
 							<thead>
 								<tr>
-								
+									<th><g:message code="company.wallet.label" default="Carteira" /></th>
+
 									<th><g:message code="company.name.label" default="Nome" /></th>
 								
 									<th><g:message code="company.sector.label" default="Setor" /></th>
@@ -64,8 +65,10 @@
 								<g:each in="${companyInstanceList}" status="i" var="companyInstance">
 									<tr class="odd gradeX">
 									
-										<td><g:link action="show" id="${companyInstance.id}">${fieldValue(bean: companyInstance, field: "name")}</g:link></td>
+										<td><g:link controller="wallet" action="show" id="${companyInstance.wallet.id}">${fieldValue(bean: companyInstance, field: "wallet")}</g:link></td>
 					
+										<td>${fieldValue(bean: companyInstance, field: "name")}</td>
+
 										<td>${fieldValue(bean: companyInstance, field: "sector")}</td>
 									
 									</tr>

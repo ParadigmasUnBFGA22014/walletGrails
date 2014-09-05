@@ -12,6 +12,11 @@ class WalletController {
         redirect(action: "list", params: params)
     }
 
+    def calculate(Long id) {
+        def walletInstance = Wallet.get(id)
+        [walletInstance: walletInstance]
+    }
+
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [walletInstanceList: Wallet.list(params), walletInstanceTotal: Wallet.count()]
@@ -100,9 +105,5 @@ class WalletController {
             flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'wallet.label', default: 'Wallet'), id])
             redirect(action: "show", id: id)
         }
-    }
-
-    def calculate(){
-        
     }
 }

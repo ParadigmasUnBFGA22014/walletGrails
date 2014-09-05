@@ -51,6 +51,21 @@
 								<h3 class="form-section">Dados</h3>
 
 								<div class="row">
+									<g:if test="${companyInstance?.wallet}">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="control-label col-md-3">Carteira</label>
+												
+												<div class="col-md-9">
+													<p class="form-control-static">
+														<g:fieldValue bean="${companyInstance}" field="wallet"/>
+													</p>
+												</div>
+											
+											</div>
+										</div>
+									</g:if>
+
 									<g:if test="${companyInstance?.name}">
 										<div class="col-md-6">
 											<div class="form-group">
