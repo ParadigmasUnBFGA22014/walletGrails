@@ -8,14 +8,8 @@ class UserController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
-    def index() {
-        redirect(action: "list", params: params)
-    }
-
-    def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        [userInstanceList: User.list(params), userInstanceTotal: User.count()]
-    }
+    static defaultAction = "create"
+    def springSecurityService
 
     def create() {
         [userInstance: new User(params)]
@@ -27,6 +21,8 @@ class UserController {
             render(view: "create", model: [userInstance: userInstance])
             return
         }
+
+        UserRole.create userInstance, Role.get(1), true
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
         redirect(action: "show", id: userInstance.id)
@@ -41,6 +37,10 @@ class UserController {
         }
 
         [userInstance: userInstance]
+    }
+
+    def showCurrentUser() {
+        redirect action:"show", id:springSecurityService.currentUser.id
     }
 
     def edit(Long id) {
@@ -73,6 +73,9 @@ class UserController {
         }
 
         userInstance.properties = params
+        
+        if(params.newPassword != "")
+            userInstance.password = params.newPassword
 
         if (!userInstance.save(flush: true)) {
             render(view: "edit", model: [userInstance: userInstance])

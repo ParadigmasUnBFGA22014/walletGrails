@@ -1,20 +1,13 @@
 <%@ page import="com.wallet.authentication.User" %>
 
-
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required">
-	<label for="username">
-		<g:message code="user.username.label" default="Username" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="username" required="" value="${userInstance?.username}"/>
+<div class="form-group">
+	<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required">
+		<label class="control-label col-md-3" for="username">
+			<g:message code="headquarter.username.label" default="Usuário" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-md-4">
+			<g:textField class="form-control" name="username" required="" value="${userInstance?.username}"/>
+		</div>
+	</div>
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} required">
-	<label for="password">
-		<g:message code="user.password.label" default="Password" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="password" required="" value="${userInstance?.password}"/>
-</div>
-

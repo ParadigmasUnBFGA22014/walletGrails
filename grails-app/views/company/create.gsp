@@ -40,9 +40,9 @@
 			</div>
 
 			<div class="col-md-12">
-				<g:hasErrors bean="${headquarterInstance}">
+				<g:hasErrors bean="${companyInstance}">
 					<ul class="errors" role="alert">
-						<g:eachError bean="${headquarterInstance}" var="error">
+						<g:eachError bean="${companyInstance}" var="error">
 							<div class="alert alert-danger alert-dismissable">
 								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 								<g:if test="${error in org.springframework.validation.FieldError}">
