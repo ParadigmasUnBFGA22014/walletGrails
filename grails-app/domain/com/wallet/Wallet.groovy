@@ -4,14 +4,24 @@ class Wallet {
 
     String walletName 
 	Double standardDeviation
-	Double covarience
+	Double varianceCoeffient
 	Double varience
 	Double averageReturn
+	Double value 
 	
 	
 	static hasMany = [stock: Stock ]
 	
     static constraints = {
+    	walletName(nullable:false)
+    	standardDeviation(nullable:false)
+    	varianceCoeffient(nullable:false)
+    	varience(nullable:false,minSize:0)
+    	averageReturn(nullable:false)
+    	value(nullable:false,minSize:0)
+    	
+
+
     }
 
     String toString() 

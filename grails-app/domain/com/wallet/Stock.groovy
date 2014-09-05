@@ -3,12 +3,12 @@ package com.wallet
 class Stock {
 
 	String codeName
-	String company
-	String sector
 	Price price
 
-	static belongsTo=[wallet:Wallet]
+	static belongsTo=[wallet:Wallet, company:Company]
 	
     static constraints = {
+
+    	codeName(nullable:false,unique:true)
     }
 }

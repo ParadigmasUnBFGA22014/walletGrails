@@ -9,6 +9,7 @@ class Price {
 	long volume
 
     static constraints = {
+
   
     }
 }
