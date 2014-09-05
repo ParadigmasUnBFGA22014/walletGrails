@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${stockInstance?.percent}">
+				<li class="fieldcontain">
+					<span id="percent-label" class="property-label"><g:message code="stock.percent.label" default="Percent" /></span>
+					
+						<span class="property-value" aria-labelledby="percent-label"><g:fieldValue bean="${stockInstance}" field="percent"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${stockInstance?.company}">
 				<li class="fieldcontain">
 					<span id="company-label" class="property-label"><g:message code="stock.company.label" default="Company" /></span>

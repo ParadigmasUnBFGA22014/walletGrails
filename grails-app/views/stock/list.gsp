@@ -26,6 +26,8 @@
 					
 						<g:sortableColumn property="codeName" title="${message(code: 'stock.codeName.label', default: 'Code Name')}" />
 					
+						<g:sortableColumn property="percent" title="${message(code: 'stock.percent.label', default: 'Percent')}" />
+					
 						<th><g:message code="stock.company.label" default="Company" /></th>
 					
 						<th><g:message code="stock.price.label" default="Price" /></th>
@@ -39,6 +41,8 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${stockInstance.id}">${fieldValue(bean: stockInstance, field: "codeName")}</g:link></td>
+					
+						<td>${fieldValue(bean: stockInstance, field: "percent")}</td>
 					
 						<td>${fieldValue(bean: stockInstance, field: "company")}</td>
 					
