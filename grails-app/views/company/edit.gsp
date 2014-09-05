@@ -63,7 +63,7 @@
 						</div>
 					</div>
 					<div class="portlet-body form">
-						<g:form method="post"  class="form-horizontal">
+						<g:uploadForm method="post"  class="form-horizontal">
 							<div class="form-body">
 								<div class="form-section">
 								</div>
@@ -82,7 +82,7 @@
 									<g:actionSubmit class="btn red" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" formnovalidate="" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 								</div>
 							</div>
-						</g:form>
+						</g:uploadForm>
 					</div>
 				</div>
 			</div>

@@ -23,3 +23,27 @@
 		</div>
 	</div>
 </div>
+
+<div class="form-group">
+	<div class="fieldcontain ${hasErrors(bean: companyInstance, field: 'actions', 'error')} required">
+		<label class="control-label col-md-3" for="actions">
+			<g:message code="headquarter.actions.label" default="Ações" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-md-4">
+			<input type="file" name="actions">
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="fieldcontain ${hasErrors(bean: companyInstance, field: 'codeName', 'error')} required">
+		<label class="control-label col-md-3" for="codeName">
+			<g:message code="headquarter.codeName.label" default="Sigla" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-md-4">
+			<g:textField class="form-control" name="codeName" required="" />
+		</div>
+	</div>
+</div>

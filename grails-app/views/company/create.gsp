@@ -63,7 +63,7 @@
 						</div>
 					</div>
 					<div class="portlet-body form">
-						<g:form action="save"  class="form-horizontal">
+						<g:uploadForm action="save"  class="form-horizontal">
 							<div class="form-body">
 								<div class="form-section">
 								</div>
@@ -78,7 +78,7 @@
 									<button type="submit" class="btn green">Submeter</button>
 								</div>
 							</div>
-						</g:form>
+						</g:uploadForm>
 					</div>
 				</div>
 			</div>
