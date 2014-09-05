@@ -24,15 +24,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="averageReturn" title="${message(code: 'wallet.averageReturn.label', default: 'Average Return')}" />
-					
-						<g:sortableColumn property="covarience" title="${message(code: 'wallet.covarience.label', default: 'Covarience')}" />
+						<g:sortableColumn property="walletName" title="${message(code: 'wallet.walletName.label', default: 'Wallet Name')}" />
 					
 						<g:sortableColumn property="standardDeviation" title="${message(code: 'wallet.standardDeviation.label', default: 'Standard Deviation')}" />
 					
+						<g:sortableColumn property="varianceCoeffient" title="${message(code: 'wallet.varianceCoeffient.label', default: 'Variance Coeffient')}" />
+					
 						<g:sortableColumn property="varience" title="${message(code: 'wallet.varience.label', default: 'Varience')}" />
 					
-						<g:sortableColumn property="walletName" title="${message(code: 'wallet.walletName.label', default: 'Wallet Name')}" />
+						<g:sortableColumn property="averageReturn" title="${message(code: 'wallet.averageReturn.label', default: 'Average Return')}" />
+					
+						<g:sortableColumn property="value" title="${message(code: 'wallet.value.label', default: 'Value')}" />
 					
 					</tr>
 				</thead>
@@ -40,15 +42,17 @@
 				<g:each in="${walletInstanceList}" status="i" var="walletInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${walletInstance.id}">${fieldValue(bean: walletInstance, field: "averageReturn")}</g:link></td>
-					
-						<td>${fieldValue(bean: walletInstance, field: "covarience")}</td>
+						<td><g:link action="show" id="${walletInstance.id}">${fieldValue(bean: walletInstance, field: "walletName")}</g:link></td>
 					
 						<td>${fieldValue(bean: walletInstance, field: "standardDeviation")}</td>
 					
+						<td>${fieldValue(bean: walletInstance, field: "varianceCoeffient")}</td>
+					
 						<td>${fieldValue(bean: walletInstance, field: "varience")}</td>
 					
-						<td>${fieldValue(bean: walletInstance, field: "walletName")}</td>
+						<td>${fieldValue(bean: walletInstance, field: "averageReturn")}</td>
+					
+						<td>${fieldValue(bean: walletInstance, field: "value")}</td>
 					
 					</tr>
 				</g:each>

@@ -10,12 +10,12 @@
 	<g:textField name="codeName" value="${stockInstance?.codeName}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: stockInstance, field: 'company', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: stockInstance, field: 'company', 'error')} required">
 	<label for="company">
 		<g:message code="stock.company.label" default="Company" />
-		
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="company" value="${stockInstance?.company}"/>
+	<g:select id="company" name="company.id" from="${com.wallet.Company.list()}" optionKey="id" required="" value="${stockInstance?.company?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: stockInstance, field: 'price', 'error')} required">
@@ -24,14 +24,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="price" name="price.id" from="${com.wallet.Price.list()}" optionKey="id" required="" value="${stockInstance?.price?.id}" class="many-to-one"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: stockInstance, field: 'sector', 'error')} ">
-	<label for="sector">
-		<g:message code="stock.sector.label" default="Sector" />
-		
-	</label>
-	<g:textField name="sector" value="${stockInstance?.sector}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: stockInstance, field: 'wallet', 'error')} required">

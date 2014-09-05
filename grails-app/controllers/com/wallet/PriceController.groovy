@@ -6,12 +6,9 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN'])
 class PriceController {
 
-    def parseService
-
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
-        parseService.populatePrice()
         redirect(action: "list", params: params)
     }
 

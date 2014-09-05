@@ -24,11 +24,35 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="close" title="${message(code: 'price.close.label', default: 'Close')}" />
+					
+						<g:sortableColumn property="date" title="${message(code: 'price.date.label', default: 'Date')}" />
+					
+						<g:sortableColumn property="high" title="${message(code: 'price.high.label', default: 'High')}" />
+					
+						<g:sortableColumn property="low" title="${message(code: 'price.low.label', default: 'Low')}" />
+					
+						<g:sortableColumn property="open" title="${message(code: 'price.open.label', default: 'Open')}" />
+					
+						<g:sortableColumn property="volume" title="${message(code: 'price.volume.label', default: 'Volume')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${priceInstanceList}" status="i" var="priceInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${priceInstance.id}">${fieldValue(bean: priceInstance, field: "close")}</g:link></td>
+					
+						<td><g:formatDate date="${priceInstance.date}" /></td>
+					
+						<td>${fieldValue(bean: priceInstance, field: "high")}</td>
+					
+						<td>${fieldValue(bean: priceInstance, field: "low")}</td>
+					
+						<td>${fieldValue(bean: priceInstance, field: "open")}</td>
+					
+						<td>${fieldValue(bean: priceInstance, field: "volume")}</td>
 					
 					</tr>
 				</g:each>

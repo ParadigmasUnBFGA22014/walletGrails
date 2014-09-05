@@ -23,6 +23,60 @@
 			</g:if>
 			<ol class="property-list price">
 			
+				<g:if test="${priceInstance?.close}">
+				<li class="fieldcontain">
+					<span id="close-label" class="property-label"><g:message code="price.close.label" default="Close" /></span>
+					
+						<span class="property-value" aria-labelledby="close-label"><g:fieldValue bean="${priceInstance}" field="close"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${priceInstance?.date}">
+				<li class="fieldcontain">
+					<span id="date-label" class="property-label"><g:message code="price.date.label" default="Date" /></span>
+					
+						<span class="property-value" aria-labelledby="date-label"><g:formatDate date="${priceInstance?.date}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${priceInstance?.high}">
+				<li class="fieldcontain">
+					<span id="high-label" class="property-label"><g:message code="price.high.label" default="High" /></span>
+					
+						<span class="property-value" aria-labelledby="high-label"><g:fieldValue bean="${priceInstance}" field="high"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${priceInstance?.low}">
+				<li class="fieldcontain">
+					<span id="low-label" class="property-label"><g:message code="price.low.label" default="Low" /></span>
+					
+						<span class="property-value" aria-labelledby="low-label"><g:fieldValue bean="${priceInstance}" field="low"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${priceInstance?.open}">
+				<li class="fieldcontain">
+					<span id="open-label" class="property-label"><g:message code="price.open.label" default="Open" /></span>
+					
+						<span class="property-value" aria-labelledby="open-label"><g:fieldValue bean="${priceInstance}" field="open"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${priceInstance?.volume}">
+				<li class="fieldcontain">
+					<span id="volume-label" class="property-label"><g:message code="price.volume.label" default="Volume" /></span>
+					
+						<span class="property-value" aria-labelledby="volume-label"><g:fieldValue bean="${priceInstance}" field="volume"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

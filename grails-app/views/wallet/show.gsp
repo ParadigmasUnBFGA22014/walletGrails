@@ -23,20 +23,11 @@
 			</g:if>
 			<ol class="property-list wallet">
 			
-				<g:if test="${walletInstance?.averageReturn}">
+				<g:if test="${walletInstance?.walletName}">
 				<li class="fieldcontain">
-					<span id="averageReturn-label" class="property-label"><g:message code="wallet.averageReturn.label" default="Average Return" /></span>
+					<span id="walletName-label" class="property-label"><g:message code="wallet.walletName.label" default="Wallet Name" /></span>
 					
-						<span class="property-value" aria-labelledby="averageReturn-label"><g:fieldValue bean="${walletInstance}" field="averageReturn"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${walletInstance?.covarience}">
-				<li class="fieldcontain">
-					<span id="covarience-label" class="property-label"><g:message code="wallet.covarience.label" default="Covarience" /></span>
-					
-						<span class="property-value" aria-labelledby="covarience-label"><g:fieldValue bean="${walletInstance}" field="covarience"/></span>
+						<span class="property-value" aria-labelledby="walletName-label"><g:fieldValue bean="${walletInstance}" field="walletName"/></span>
 					
 				</li>
 				</g:if>
@@ -50,13 +41,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${walletInstance?.stock}">
+				<g:if test="${walletInstance?.varianceCoeffient}">
 				<li class="fieldcontain">
-					<span id="stock-label" class="property-label"><g:message code="wallet.stock.label" default="Stock" /></span>
+					<span id="varianceCoeffient-label" class="property-label"><g:message code="wallet.varianceCoeffient.label" default="Variance Coeffient" /></span>
 					
-						<g:each in="${walletInstance.stock}" var="s">
-						<span class="property-value" aria-labelledby="stock-label"><g:link controller="stock" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
-						</g:each>
+						<span class="property-value" aria-labelledby="varianceCoeffient-label"><g:fieldValue bean="${walletInstance}" field="varianceCoeffient"/></span>
 					
 				</li>
 				</g:if>
@@ -70,11 +59,31 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${walletInstance?.walletName}">
+				<g:if test="${walletInstance?.averageReturn}">
 				<li class="fieldcontain">
-					<span id="walletName-label" class="property-label"><g:message code="wallet.walletName.label" default="Wallet Name" /></span>
+					<span id="averageReturn-label" class="property-label"><g:message code="wallet.averageReturn.label" default="Average Return" /></span>
 					
-						<span class="property-value" aria-labelledby="walletName-label"><g:fieldValue bean="${walletInstance}" field="walletName"/></span>
+						<span class="property-value" aria-labelledby="averageReturn-label"><g:fieldValue bean="${walletInstance}" field="averageReturn"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${walletInstance?.value}">
+				<li class="fieldcontain">
+					<span id="value-label" class="property-label"><g:message code="wallet.value.label" default="Value" /></span>
+					
+						<span class="property-value" aria-labelledby="value-label"><g:fieldValue bean="${walletInstance}" field="value"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${walletInstance?.stock}">
+				<li class="fieldcontain">
+					<span id="stock-label" class="property-label"><g:message code="wallet.stock.label" default="Stock" /></span>
+					
+						<g:each in="${walletInstance.stock}" var="s">
+						<span class="property-value" aria-labelledby="stock-label"><g:link controller="stock" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

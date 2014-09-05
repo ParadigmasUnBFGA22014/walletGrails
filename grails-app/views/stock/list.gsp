@@ -26,11 +26,9 @@
 					
 						<g:sortableColumn property="codeName" title="${message(code: 'stock.codeName.label', default: 'Code Name')}" />
 					
-						<g:sortableColumn property="company" title="${message(code: 'stock.company.label', default: 'Company')}" />
+						<th><g:message code="stock.company.label" default="Company" /></th>
 					
 						<th><g:message code="stock.price.label" default="Price" /></th>
-					
-						<g:sortableColumn property="sector" title="${message(code: 'stock.sector.label', default: 'Sector')}" />
 					
 						<th><g:message code="stock.wallet.label" default="Wallet" /></th>
 					
@@ -45,8 +43,6 @@
 						<td>${fieldValue(bean: stockInstance, field: "company")}</td>
 					
 						<td>${fieldValue(bean: stockInstance, field: "price")}</td>
-					
-						<td>${fieldValue(bean: stockInstance, field: "sector")}</td>
 					
 						<td>${fieldValue(bean: stockInstance, field: "wallet")}</td>
 					

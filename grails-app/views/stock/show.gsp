@@ -36,7 +36,7 @@
 				<li class="fieldcontain">
 					<span id="company-label" class="property-label"><g:message code="stock.company.label" default="Company" /></span>
 					
-						<span class="property-value" aria-labelledby="company-label"><g:fieldValue bean="${stockInstance}" field="company"/></span>
+						<span class="property-value" aria-labelledby="company-label"><g:link controller="company" action="show" id="${stockInstance?.company?.id}">${stockInstance?.company?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -46,15 +46,6 @@
 					<span id="price-label" class="property-label"><g:message code="stock.price.label" default="Price" /></span>
 					
 						<span class="property-value" aria-labelledby="price-label"><g:link controller="price" action="show" id="${stockInstance?.price?.id}">${stockInstance?.price?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${stockInstance?.sector}">
-				<li class="fieldcontain">
-					<span id="sector-label" class="property-label"><g:message code="stock.sector.label" default="Sector" /></span>
-					
-						<span class="property-value" aria-labelledby="sector-label"><g:fieldValue bean="${stockInstance}" field="sector"/></span>
 					
 				</li>
 				</g:if>
