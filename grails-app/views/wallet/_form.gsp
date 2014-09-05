@@ -50,18 +50,18 @@
 	<g:field name="value" value="${fieldValue(bean: walletInstance, field: 'value')}" required=""/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: walletInstance, field: 'stock', 'error')} ">
-	<label for="stock">
-		<g:message code="wallet.stock.label" default="Stock" />
+<div class="fieldcontain ${hasErrors(bean: walletInstance, field: 'company', 'error')} ">
+	<label for="company">
+		<g:message code="wallet.company.label" default="Company" />
 		
 	</label>
 	
 <ul class="one-to-many">
-<g:each in="${walletInstance?.stock?}" var="s">
-    <li><g:link controller="stock" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></li>
+<g:each in="${walletInstance?.company?}" var="c">
+    <li><g:link controller="company" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
 </g:each>
 <li class="add">
-<g:link controller="stock" action="create" params="['wallet.id': walletInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'stock.label', default: 'Stock')])}</g:link>
+<g:link controller="company" action="create" params="['wallet.id': walletInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'company.label', default: 'Company')])}</g:link>
 </li>
 </ul>
 

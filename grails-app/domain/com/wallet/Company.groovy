@@ -6,6 +6,7 @@ class Company {
 	String sector
 
 	static hasMany=[stocks:Stock]
+	static belongsTo=[wallet:Wallet]
 
     static constraints = {
 

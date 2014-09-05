@@ -77,12 +77,12 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${walletInstance?.stock}">
+				<g:if test="${walletInstance?.company}">
 				<li class="fieldcontain">
-					<span id="stock-label" class="property-label"><g:message code="wallet.stock.label" default="Stock" /></span>
+					<span id="company-label" class="property-label"><g:message code="wallet.company.label" default="Company" /></span>
 					
-						<g:each in="${walletInstance.stock}" var="s">
-						<span class="property-value" aria-labelledby="stock-label"><g:link controller="stock" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						<g:each in="${walletInstance.company}" var="c">
+						<span class="property-value" aria-labelledby="company-label"><g:link controller="company" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

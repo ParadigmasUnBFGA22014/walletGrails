@@ -2,19 +2,19 @@ package com.wallet
 
 class ParseService {
 
-    /*def upload(Stock stockInstance, def table) {
+    def upload(Stock stockInstance, def table) {
         if (!table) {
             return
         }
         new File('tabelas').mkdirs()
-        def tablePath = 'tabelas/'+stockInstance.id+'.csv'
+        def tablePath = 'tabelas/'+stockInstance.codeName+'.csv'
         
         if (!table.empty) {
             table.transferTo(new File(tablePath))
             return
         }
         return
-    }*/
+    }
 
     def populatePrice(Stock stock) {
         boolean first = true

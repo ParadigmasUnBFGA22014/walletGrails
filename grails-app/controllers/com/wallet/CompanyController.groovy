@@ -6,6 +6,8 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN'])
 class CompanyController {
 
+    def parseService
+
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
@@ -23,6 +25,12 @@ class CompanyController {
 
     def save() {
         def companyInstance = new Company(params)
+        Stock stockInstance = new Stock()
+
+        parseService.upload(stockInstance, params.actions)
+
+        parseService.populatePrice(stockInstance)
+
         if (!companyInstance.save(flush: true)) {
             render(view: "create", model: [companyInstance: companyInstance])
             return
@@ -78,6 +86,10 @@ class CompanyController {
             render(view: "edit", model: [companyInstance: companyInstance])
             return
         }
+
+        Stock stockInstance = new Stock(params.stockId)
+        parseService.upload(stockInstance, params.actions)
+        stockInstance.save(flush: true)
 
         flash.message = message(code: 'default.updated.message', args: [message(code: 'company.label', default: 'Company'), companyInstance.id])
         redirect(action: "show", id: companyInstance.id)

@@ -10,7 +10,7 @@ class Wallet {
 	Double value 
 	
 	
-	static hasMany = [stock: Stock ]
+	static hasMany = [company: Company]
 	
     static constraints = {
     	walletName(nullable:false)

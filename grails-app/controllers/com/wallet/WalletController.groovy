@@ -101,4 +101,8 @@ class WalletController {
             redirect(action: "show", id: id)
         }
     }
+
+    def calculate(){
+        
+    }
 }

@@ -50,24 +50,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${stockInstance?.price}">
-				<li class="fieldcontain">
-					<span id="price-label" class="property-label"><g:message code="stock.price.label" default="Price" /></span>
-					
-						<span class="property-value" aria-labelledby="price-label"><g:link controller="price" action="show" id="${stockInstance?.price?.id}">${stockInstance?.price?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${stockInstance?.wallet}">
-				<li class="fieldcontain">
-					<span id="wallet-label" class="property-label"><g:message code="stock.wallet.label" default="Wallet" /></span>
-					
-						<span class="property-value" aria-labelledby="wallet-label"><g:link controller="wallet" action="show" id="${stockInstance?.wallet?.id}">${stockInstance?.wallet?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

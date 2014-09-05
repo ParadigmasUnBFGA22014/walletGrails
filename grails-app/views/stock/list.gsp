@@ -30,10 +30,6 @@
 					
 						<th><g:message code="stock.company.label" default="Company" /></th>
 					
-						<th><g:message code="stock.price.label" default="Price" /></th>
-					
-						<th><g:message code="stock.wallet.label" default="Wallet" /></th>
-					
 					</tr>
 				</thead>
 				<tbody>
@@ -45,10 +41,6 @@
 						<td>${fieldValue(bean: stockInstance, field: "percent")}</td>
 					
 						<td>${fieldValue(bean: stockInstance, field: "company")}</td>
-					
-						<td>${fieldValue(bean: stockInstance, field: "price")}</td>
-					
-						<td>${fieldValue(bean: stockInstance, field: "wallet")}</td>
 					
 					</tr>
 				</g:each>

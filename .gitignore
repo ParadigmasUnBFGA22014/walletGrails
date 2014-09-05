@@ -38,6 +38,7 @@
 
 # "temporary" build files
 /target
+/tabelas
 
 # other
 *.iws

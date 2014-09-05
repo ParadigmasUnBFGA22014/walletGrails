@@ -8,6 +8,8 @@ class Price {
 	Double close
 	long volume
 
+	static belongsTo = [stock:Stock]
+
     static constraints = {
 
   

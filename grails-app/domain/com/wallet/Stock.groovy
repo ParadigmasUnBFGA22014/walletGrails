@@ -3,10 +3,10 @@ package com.wallet
 class Stock {
 
 	String codeName
-	Price price
 	Double percent
 
-	static belongsTo=[wallet:Wallet, company:Company]
+	static belongsTo=[company:Company]
+	static hasmanyTo=[prices:Price]
 	
     static constraints = {
 
