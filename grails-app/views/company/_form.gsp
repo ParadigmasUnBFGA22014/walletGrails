@@ -7,7 +7,7 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-md-4">
-			<g:select class="form-control" id="wallet" name="wallet.id" from="${com.wallet.Company.list()}" optionKey="id" required="" value="${companyInstance?.wallet?.id}"/>
+			<g:select class="form-control" id="wallet" name="wallet.id" from="${com.wallet.Wallet.list()}" optionKey="id" required="" value="${companyInstance?.wallet?.id}"/>
 		</div>
 	</div>
 </div>

@@ -16,10 +16,10 @@ class ParseService {
         return
     }
 
-    def populatePrice(Stock stock) {
+    def populatePrice(Long stockId) {
         boolean first = true
-
-        new File('tabelas/'+stock.id+'.csv').eachCsvLine { tokens ->
+        Stock stock = Stock.get(stockId)
+        new File('tabelas/'+stock.codeName+'.csv').eachCsvLine { tokens ->
             if(!first){
                 Price price = new Price()
 
