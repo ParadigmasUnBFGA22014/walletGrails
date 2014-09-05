@@ -41,7 +41,7 @@
 	<body class="page-header-fixed page-full-width">
 		<div class="header navbar navbar-fixed-top mega-menu">
 			<div class="header-inner">
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="${createLink(uri: '/')}">
 					<img src="${resource(dir: 'images', file: 'logo.png')}" alt="logo" class="img-responsive"/>
 				</a>
 
@@ -67,7 +67,7 @@
 				<ul class="nav navbar-nav pull-right">
 					<li class="dropdown user">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-							<img alt="" src="${resource(dir: 'images', file: 'avatar1_small.jpg')}"/>
+							<img alt="" src="${resource(dir: 'images', file: 'wallet_user.jpg')}"/>
 							<span class="username hidden-1024">
 								 <sec:username/>
 							</span>
