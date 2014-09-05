@@ -31,4 +31,20 @@ class StaticalService {
 	{	
 		Math.sqrt(Statistical.calculeVariance(values));
 	}
+
+  double averangeReturn(double[] values )
+	{
+
+	double averangeReturn=0;
+	for(int i=0;i<(values.length-1);i++)
+	averangeReturn+=Math.log(values[i]/values[i+1])/(values.length-1);
+
+	averangeReturn;
+	}
+
+ double varianceCoefficient (double[] values)
+	{
+	 calculeStandardDeviation(values)/calculeAvarange(values);
+	}
+
 }
