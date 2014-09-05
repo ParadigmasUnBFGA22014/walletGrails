@@ -53,7 +53,7 @@
 							</g:link>
 						</li>
 						<li class="classic-menu-dropdown">
-							<g:link>
+							<g:link controller="company">
 								Empresas
 							</g:link>
 						</li>
@@ -98,18 +98,7 @@
 		<div class="page-container">
 			<div class="page-content-wrapper">
 				<div class="page-content">
-					<!-- BEGIN PAGE HEADER-->
-					<div class="row">
-						<div class="col-md-12">
-							<h3 class="page-title">
-								Carteira de Ações
-							</h3>
-						</div>
-					</div>
-					<div class="row margin-bottom-20">
-						<div class="col-md-12">
-							<g:layoutBody/>
-						</div>
+						<g:layoutBody/>
 					</div>
 				</div>
 			</div>

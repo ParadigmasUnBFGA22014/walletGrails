@@ -62,7 +62,7 @@
 					</div>
 				</div>
 				<div class="form-actions">
-					<button type="submit" class="btn red pull-right">
+					<button type="submit" class="btn green pull-right">
 						Entrar <i class="m-icon-swapright m-icon-white"></i>
 					</button>
 				</div>
