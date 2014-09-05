@@ -48,7 +48,7 @@
 				<div class="hor-menu hidden-sm hidden-xs">
 					<ul class="nav navbar-nav">
 						<li class="classic-menu-dropdown">
-							<g:link>
+							<g:link controller="wallet" action="create">
 								Nova Carteira
 							</g:link>
 						</li>

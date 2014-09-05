@@ -1,4 +1,3 @@
-
 <%@ page import="com.wallet.Wallet" %>
 <!DOCTYPE html>
 <html>
@@ -8,94 +7,158 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#show-wallet" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="show-wallet" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<ol class="property-list wallet">
-			
-				<g:if test="${walletInstance?.walletName}">
-				<li class="fieldcontain">
-					<span id="walletName-label" class="property-label"><g:message code="wallet.walletName.label" default="Wallet Name" /></span>
-					
-						<span class="property-value" aria-labelledby="walletName-label"><g:fieldValue bean="${walletInstance}" field="walletName"/></span>
-					
-				</li>
+		<div class="row">
+			<div class="col-md-12">
+	            <h3 class="page-title">Carteira</h3>
+	            <ul class="page-breadcrumb breadcrumb">
+	                <li>
+	                    <i class="fa fa-home"></i>
+	                    <a href="${createLink(uri: '/')}">
+							Página Inicial
+						</a>
+	                    <i class="fa fa-angle-right"></i>
+	                </li>
+	                <li>
+	                	<g:link action="index">
+							Carteiras
+						</g:link>
+						<i class="fa fa-angle-right"></i>
+	                </li>
+	                <li>
+						Detalhar
+	                </li>
+	            </ul>
+	        </div>
+	        <div class="col-md-12">
+				<g:if test="${flash.message}">
+					<div class="alert alert-info alert-dismissable">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					    ${flash.message}
+					</div>
 				</g:if>
-			
-				<g:if test="${walletInstance?.standardDeviation}">
-				<li class="fieldcontain">
-					<span id="standardDeviation-label" class="property-label"><g:message code="wallet.standardDeviation.label" default="Standard Deviation" /></span>
-					
-						<span class="property-value" aria-labelledby="standardDeviation-label"><g:fieldValue bean="${walletInstance}" field="standardDeviation"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${walletInstance?.varianceCoeffient}">
-				<li class="fieldcontain">
-					<span id="varianceCoeffient-label" class="property-label"><g:message code="wallet.varianceCoeffient.label" default="Variance Coeffient" /></span>
-					
-						<span class="property-value" aria-labelledby="varianceCoeffient-label"><g:fieldValue bean="${walletInstance}" field="varianceCoeffient"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${walletInstance?.varience}">
-				<li class="fieldcontain">
-					<span id="varience-label" class="property-label"><g:message code="wallet.varience.label" default="Varience" /></span>
-					
-						<span class="property-value" aria-labelledby="varience-label"><g:fieldValue bean="${walletInstance}" field="varience"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${walletInstance?.averageReturn}">
-				<li class="fieldcontain">
-					<span id="averageReturn-label" class="property-label"><g:message code="wallet.averageReturn.label" default="Average Return" /></span>
-					
-						<span class="property-value" aria-labelledby="averageReturn-label"><g:fieldValue bean="${walletInstance}" field="averageReturn"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${walletInstance?.value}">
-				<li class="fieldcontain">
-					<span id="value-label" class="property-label"><g:message code="wallet.value.label" default="Value" /></span>
-					
-						<span class="property-value" aria-labelledby="value-label"><g:fieldValue bean="${walletInstance}" field="value"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${walletInstance?.company}">
-				<li class="fieldcontain">
-					<span id="company-label" class="property-label"><g:message code="wallet.company.label" default="Company" /></span>
-					
-						<g:each in="${walletInstance.company}" var="c">
-						<span class="property-value" aria-labelledby="company-label"><g:link controller="company" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
-			</ol>
-			<g:form>
-				<fieldset class="buttons">
-					<g:hiddenField name="id" value="${walletInstance?.id}" />
-					<g:link class="edit" action="edit" id="${walletInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
+			</div>
+			<div class="col-md-12">
+				<div class="portlet box green">
+					<div class="portlet-title">
+						<div class="caption">
+							<i class="fa fa-reorder"></i>Detalhar Carteira
+						</div>
+					</div>
+					<div class="portlet-body form">
+						<div class="form-horizontal" role="form">
+							<div class="form-body">
+								<h3 class="form-section">Dados</h3>
+
+								<div class="row">
+									<g:if test="${walletInstance?.walletName}">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="control-label col-md-3">Nome</label>
+												
+												<div class="col-md-9">
+													<p class="form-control-static">
+														<g:fieldValue bean="${walletInstance}" field="walletName"/>
+													</p>
+												</div>
+											
+											</div>
+										</div>
+									</g:if>
+
+									<g:if test="${walletInstance?.value}">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="control-label col-md-3">Valor</label>
+												
+												<div class="col-md-9">
+													<p class="form-control-static">
+														<g:fieldValue bean="${walletInstance}" field="value"/>
+													</p>
+												</div>
+											
+											</div>
+										</div>
+									</g:if>
+
+									<g:if test="${walletInstance?.standartDeviation}">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="control-label col-md-3">Desvio Padrão</label>
+												
+												<div class="col-md-9">
+													<p class="form-control-static">
+														<g:fieldValue bean="${walletInstance}" field="standartDeviation"/>
+													</p>
+												</div>
+											
+											</div>
+										</div>
+									</g:if>
+
+									<g:if test="${walletInstance?.varianceCoeffient}">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="control-label col-md-3">Coeficiente de Variação</label>
+												
+												<div class="col-md-9">
+													<p class="form-control-static">
+														<g:fieldValue bean="${walletInstance}" field="varianceCoeffient"/>
+													</p>
+												</div>
+											
+											</div>
+										</div>
+									</g:if>
+
+									<g:if test="${walletInstance?.varience}">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="control-label col-md-3">Variância</label>
+												
+												<div class="col-md-9">
+													<p class="form-control-static">
+														<g:fieldValue bean="${walletInstance}" field="varience"/>
+													</p>
+												</div>
+											
+											</div>
+										</div>
+									</g:if>
+
+									<g:if test="${walletInstance?.averangeReturn}">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="control-label col-md-3">Retorno Médio</label>
+												
+												<div class="col-md-9">
+													<p class="form-control-static">
+														<g:fieldValue bean="${walletInstance}" field="averangeReturn"/>
+													</p>
+												</div>
+											
+											</div>
+										</div>
+									</g:if>
+								</div>
+							</div>
+
+							<g:form>
+								<div class="form-actions right">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="col-md-offset-3 col-md-9">
+												<g:hiddenField name="id" value="${walletInstance?.id}" />
+												<g:link class="btn green" action="edit" id="${walletInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+												<g:actionSubmit class="btn red" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Você tem certeza?')}');" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</g:form>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
