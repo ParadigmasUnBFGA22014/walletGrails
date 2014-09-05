@@ -38,36 +38,55 @@
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>
-	<body class="page-header-fixed page-boxed">
-		<div class="header navbar navbar-fixed-top">
-			<div class="header-inner container">
-				<a class="navbar-brand" href="${createLink(uri: '/')}">
+	<body class="page-header-fixed page-full-width">
+		<div class="header navbar navbar-fixed-top mega-menu">
+			<div class="header-inner">
+				<a class="navbar-brand" href="index.html">
 					<img src="${resource(dir: 'images', file: 'logo.png')}" alt="logo" class="img-responsive"/>
+				</a>
+
+				<div class="hor-menu hidden-sm hidden-xs">
+					<ul class="nav navbar-nav">
+						<li class="classic-menu-dropdown">
+							<g:link>
+								Nova Carteira
+							</g:link>
+						</li>
+						<li class="classic-menu-dropdown">
+							<g:link>
+								Empresas
+							</g:link>
+						</li>
+					</ul>
+				</div>
+
+				<a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<img src="${resource(dir: 'images', file: 'menu-toggler.png')}" alt=""/>
 				</a>
 
 				<ul class="nav navbar-nav pull-right">
 					<li class="dropdown user">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-							<img alt="" src="${resource(dir: 'images', file: 'avatar.png')}"/>
-							<span class="username">
+							<img alt="" src="${resource(dir: 'images', file: 'avatar1_small.jpg')}"/>
+							<span class="username hidden-1024">
 								 <sec:username/>
 							</span>
 							<i class="fa fa-angle-down"></i>
-							<ul class="dropdown-menu">
-								<li>
-									<g:link controller="user" action="showCurrentUser">
-										<i class="fa fa-user"></i> Meu Perfil
-									</g:link>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<g:link controller="logout">
-										<i class="fa fa-sign-out"></i> Sair
-									</g:link>
-								</li>
-							</ul>
 						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<g:link controller="user" action="showCurrentUser">
+									<i class="fa fa-user"></i> Meu Perfil
+								</g:link>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<g:link controller="logout">
+									<i class="fa fa-sign-out"></i> Sair
+								</g:link>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</div>
@@ -76,49 +95,31 @@
 		<div class="clearfix">
 		</div>
 
-		<div class="container">
-			<div class="page-container">
-				<div class="page-sidebar-wrapper">
-					<div class="page-sidebar navbar-collapse collapse">
-						<ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200">
-							<li class="sidebar-toggler-wrapper">
-								<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-								<div class="sidebar-toggler hidden-phone">
-								</div>
-								<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-							</li>
-							<li class="start ">
-								<a href="${createLink(uri: '/')}">
-									<i class="fa fa-home"></i>
-									<span class="title">
-										Início
-									</span>
-								</a>
-							</li>
-							<li class="last">
-		                        <g:link controller="logout">
-		                            <i class="fa fa-sign-out"></i>
-		                            <span class="title">
-		                                 Sair
-		                            </span>
-		                        </g:link>
-		                    </li>
-						</ul>
+		<div class="page-container">
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<!-- BEGIN PAGE HEADER-->
+					<div class="row">
+						<div class="col-md-12">
+							<h3 class="page-title">
+								Carteira de Ações
+							</h3>
+						</div>
 					</div>
-				</div>
-				<div class="page-sidebar-wrapper">
-					<div class="page-content">
-						<g:layoutBody/>
+					<div class="row margin-bottom-20">
+						<div class="col-md-12">
+							<g:layoutBody/>
+						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 
-			<div class="footer">
-				<div class="footer-tools">
-					<span class="go-top">
-						<i class="fa fa-angle-up"></i>
-					</span>
-				</div>
+		<div class="footer">
+			<div class="footer-tools">
+				<span class="go-top">
+					<i class="fa fa-angle-up"></i>
+				</span>
 			</div>
 		</div>
 
