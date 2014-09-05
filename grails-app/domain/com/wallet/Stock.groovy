@@ -11,6 +11,6 @@ class Stock {
     static constraints = {
 
     	codeName(nullable:false,unique:true)
-    	percent(nullable:false)
+    	percent(nullable:true, minSize:0)
     }
 }

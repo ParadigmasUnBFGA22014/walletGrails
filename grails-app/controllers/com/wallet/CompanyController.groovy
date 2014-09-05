@@ -25,16 +25,18 @@ class CompanyController {
 
     def save() {
         def companyInstance = new Company(params)
-        Stock stockInstance = new Stock()
-
-        parseService.upload(stockInstance, params.actions)
-
-        parseService.populatePrice(stockInstance)
 
         if (!companyInstance.save(flush: true)) {
             render(view: "create", model: [companyInstance: companyInstance])
             return
         }
+        Stock stockInstance = new Stock(codeName: params.codeName, company:companyInstance)
+
+        stockInstance.save(flush: true)
+        
+        parseService.upload(stockInstance, params.actions)
+
+        parseService.populatePrice(stockInstance.id)
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'company.label', default: 'Company'), companyInstance.id])
         redirect(action: "show", id: companyInstance.id)

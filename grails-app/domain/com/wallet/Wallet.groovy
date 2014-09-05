@@ -14,10 +14,10 @@ class Wallet {
 	
     static constraints = {
     	walletName(nullable:false)
-    	standardDeviation(nullable:false)
-    	varianceCoeffient(nullable:false)
-    	varience(nullable:false,minSize:0)
-    	averageReturn(nullable:false)
+    	standardDeviation(nullable:true)
+    	varianceCoeffient(nullable:true)
+    	varience(nullable:true,minSize:0)
+    	averageReturn(nullable:true)
     	value(nullable:false,minSize:0)
     	
 

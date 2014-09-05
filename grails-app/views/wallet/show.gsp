@@ -80,14 +80,14 @@
 										</div>
 									</g:if>
 
-									<g:if test="${walletInstance?.standartDeviation}">
+									<g:if test="${walletInstance?.standardDeviation}">
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="control-label col-md-3">Desvio Padrão</label>
 												
 												<div class="col-md-9">
 													<p class="form-control-static">
-														<g:fieldValue bean="${walletInstance}" field="standartDeviation"/>
+														<g:fieldValue bean="${walletInstance}" field="standardDeviation"/>
 													</p>
 												</div>
 											
@@ -125,14 +125,14 @@
 										</div>
 									</g:if>
 
-									<g:if test="${walletInstance?.averangeReturn}">
+									<g:if test="${walletInstance?.averageReturn}">
 										<div class="col-md-6">
 											<div class="form-group">
 												<label class="control-label col-md-3">Retorno Médio</label>
 												
 												<div class="col-md-9">
 													<p class="form-control-static">
-														<g:fieldValue bean="${walletInstance}" field="averangeReturn"/>
+														<g:fieldValue bean="${walletInstance}" field="averageReturn"/>
 													</p>
 												</div>
 											
