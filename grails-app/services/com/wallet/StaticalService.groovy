@@ -42,4 +42,9 @@ class StaticalService {
 	averangeReturn;
 	}
 
+ double varianceCoefficient (double[] values)
+	{
+	 calculeStandardDeviation(values)/calculeAvarange(values);
+	}
+
 }
