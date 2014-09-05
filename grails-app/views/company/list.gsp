@@ -61,7 +61,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<g:each in="${headquarterInstanceList}" status="i" var="headquarterInstance">
+								<g:each in="${companyInstanceList}" status="i" var="companyInstance">
 									<tr class="odd gradeX">
 									
 										<td><g:link action="show" id="${companyInstance.id}">${fieldValue(bean: companyInstance, field: "name")}</g:link></td>
