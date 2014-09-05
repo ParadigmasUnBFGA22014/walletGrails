@@ -63,7 +63,7 @@
 						</div>
 					</div>
 					<div class="portlet-body form">
-						<g:uploadForm action="save"  class="form-horizontal">
+						<g:uploadForm action="calc"  class="form-horizontal">
 							<div class="form-body">
 								<div class="form-section">
 								</div>
@@ -72,10 +72,39 @@
 									O formulário contêm erros. Por favor verifique abaixo.
 								</div>
 								<g:render template="form"/>
+
+								<div class="portlet-body">
+									<table class="table table-bordered table-hover">
+										<thead>
+											<tr>
+											
+												<th><g:message code="wallet.name.label" default="Nome" /></th>
+											
+												<th><g:message code="wallet.value.label" default="Ações" /></th>
+
+												<th><g:message code="wallet.invest.label" default="Investimento (%)" /></th>
+											
+											</tr>
+										</thead>
+										<tbody>
+											<g:each in="${companies}" status="i" var="companyInstance">
+												<tr class="odd gradeX">
+												
+													<td><g:link action="show" id="${companyInstance.id}">${fieldValue(bean: companyInstance, field: "name")}</g:link></td>
+												
+													<td><g:select class="form-control" id="company" name="company.id" from="${com.wallet.Stock.list()}" optionKey="id" required="" value="${companyInstance?.wallet?.id}"/></td>
+
+													<td><g:textField class="form-control" name="invest" /></td>
+												
+												</tr>
+											</g:each>
+										</tbody>
+									</table>
+								</div>
 							</div>
 							<div class="form-actions right">
 								<div class="col-md-offset-3 col-md-9">
-									<button type="submit" class="btn green">Submeter</button>
+									<button type="submit" class="btn green">Calcular</button>
 								</div>
 							</div>
 						</g:uploadForm>

@@ -14,7 +14,9 @@ class WalletController {
 
     def calculate(Long id) {
         def walletInstance = Wallet.get(id)
-        [walletInstance: walletInstance]
+        def companies = Company.getAll()
+        
+        [walletInstance: walletInstance, companies: companies]
     }
 
     def list(Integer max) {
@@ -105,5 +107,9 @@ class WalletController {
             flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'wallet.label', default: 'Wallet'), id])
             redirect(action: "show", id: id)
         }
+    }
+
+    def calc() {
+        render "Não implementado!"
     }
 }

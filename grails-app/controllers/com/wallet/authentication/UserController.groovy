@@ -11,10 +11,12 @@ class UserController {
     static defaultAction = "create"
     def springSecurityService
 
+    @Secured(['permitAll'])
     def create() {
         [userInstance: new User(params)]
     }
 
+    @Secured(['permitAll'])
     def save() {
         def userInstance = new User(params)
         if (!userInstance.save(flush: true)) {
@@ -25,7 +27,7 @@ class UserController {
         UserRole.create userInstance, Role.get(1), true
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
-        redirect(action: "show", id: userInstance.id)
+        redirect(controller:"company")
     }
 
     def show(Long id) {

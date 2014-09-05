@@ -67,6 +67,15 @@
 					</button>
 				</div>
 
+                <div class="forget-password">
+                    <h4>Novo no site ?</h4>
+                    <p>
+                         Cadastre-se
+                        <g:link controller="user" action="create">aqui</g:link>
+                         para acessar a aplicação.
+                    </p>
+                </div>
+
 				<div class="forget-password">
 					<h4>Esqueceu a senha ?</h4>
 					<p>

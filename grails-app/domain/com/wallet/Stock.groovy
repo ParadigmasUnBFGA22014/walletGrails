@@ -13,4 +13,8 @@ class Stock {
     	codeName(nullable:false,unique:true)
     	percent(nullable:true, minSize:0)
     }
+
+    String toString() {
+    	codeName
+    }
 }
